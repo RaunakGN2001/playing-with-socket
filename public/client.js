@@ -10,7 +10,7 @@ do {
 
 
 const textarea = document.querySelector("#textarea");
-textarea.placeholder = `Chatting as ${username}...`
+textarea.placeholder = `Chatting as ${username}...`;
 
 
 var message;
@@ -33,6 +33,8 @@ const sendMessage = (message) => {
 
 
     appendMessage(messageData, 'outgoing');
+    scrollToBottom(); // so that the view always sticks to the latest message
+
 
     socket.emit('message', messageData);
 }   
@@ -58,5 +60,11 @@ const appendMessage = (messageData, type) => {
 socket.on('message', (messageData) => {
     // console.log(messageData); // this is the message data the client receives when other users connected to the same socket send messages
 
-    appendMessage(messageData, 'incoming')
+    appendMessage(messageData, 'incoming');
+    scrollToBottom();
 })
+
+
+const scrollToBottom = () => {
+    messageArea.scrollTop = messageArea.scrollHeight;
+}
