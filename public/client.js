@@ -10,6 +10,9 @@ do {
 
 
 const textarea = document.querySelector("#textarea");
+textarea.placeholder = `Chatting as ${username}...`
+
+
 var message;
 textarea.addEventListener('keyup', (e) => {   
     if(e.key === "Enter") {
@@ -17,7 +20,7 @@ textarea.addEventListener('keyup', (e) => {
         e.target.value = ""
     }
     else {
-        message = textarea.value;
+        message = textarea.value.trim();
     }
 })
 
@@ -29,8 +32,10 @@ const sendMessage = (message) => {
     }
 
 
-    appendMessage(messageData, 'outgoing')
-}
+    appendMessage(messageData, 'outgoing');
+
+    socket.emit('message', messageData);
+}   
 
 
 const appendMessage = (messageData, type) => {
@@ -48,3 +53,10 @@ const appendMessage = (messageData, type) => {
 }
 
 
+// Receive messages
+
+socket.on('message', (messageData) => {
+    // console.log(messageData); // this is the message data the client receives when other users connected to the same socket send messages
+
+    appendMessage(messageData, 'incoming')
+})

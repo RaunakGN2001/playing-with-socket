@@ -28,6 +28,9 @@ app.get('/', (req, res) => {
 
 io.on('connection', (socket) => {
     console.log("Connection established");
+    socket.on('message', (messageData) => {
+        socket.broadcast.emit('message', messageData); // broadcasting the message to all clients connected in the socket except the one who is sending the message
+    })
 })
 
 
