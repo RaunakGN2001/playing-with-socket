@@ -71,10 +71,10 @@ body {
   position: relative;
 }
 
-.incoming-message .username {
+.outgoing-message .username {
   text-align: right;
 }
-.incoming-message .message {
+.outgoing-message .message {
   color: white;
   background-color: #1C6758;
   padding-top: 0.5rem;
@@ -87,10 +87,10 @@ body {
   float: right;
 }
 
-.outgoing-message .username {
+.incoming-message .username {
   text-align: left;
 }
-.outgoing-message .message {
+.incoming-message .message {
   color: white;
   background-color: #383E56;
   padding-top: 0.5rem;
