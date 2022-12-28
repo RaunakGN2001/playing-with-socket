@@ -42,7 +42,8 @@ const sendMessage = (message) => {
 
 const appendMessage = (messageData, type) => {
     let mainDiv = document.createElement('div')
-    mainDiv.innerHTML = `<h4 class="username">${messageData.user}</h4>
+    
+    mainDiv.innerHTML = `<h4 class="username">${type === "outgoing" ? "You" : messageData.user}</h4>
     <p class="message">${messageData.msg}</p>`
 
     const className = type + "-message";
