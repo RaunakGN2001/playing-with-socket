@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Work+Sans:wght@300;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(241, 241, 241);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 3rem;
+  width: 100%;
+}
+
+.header {
+  min-width: 90%;
+}
+
+.title {
+  background-color: black;
+  color: white;
+  box-shadow: 10px 10px 0px -3px rgb(128, 128, 128);
+  font-size: 4vw;
+  text-align: center;
+  font-family: "Work Sans", sans-serif;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+}
+
+.chat-space {
+  background-color: white;
+  min-width: 90%;
+  padding: 1.8rem;
+  width: 80%;
+  height: 60vh;
+  border: 3px solid black;
+  box-shadow: 10px 10px 0px -3px rgb(128, 128, 128);
+}
+
+.username {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  font-size: 2vmax;
+}
+
+.message {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.35vmax;
+  border-radius: 5px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.message-area {
+  display: flex;
+  flex-direction: column;
+  max-height: 85%;
+  overflow-y: scroll;
+  padding-right: 0.6rem;
+  padding-left: 0.6rem;
+}
+
+.chat-space {
+  position: relative;
+}
+
+.incoming-message .username {
+  text-align: right;
+}
+.incoming-message .message {
+  color: white;
+  background-color: #1C6758;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-inline: 0.5rem;
+  max-width: 90%;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
+  float: right;
+}
+
+.outgoing-message .username {
+  text-align: left;
+}
+.outgoing-message .message {
+  color: white;
+  background-color: #383E56;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-inline: 0.5rem;
+  max-width: 90%;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
+  float: left;
+}
+
+textarea {
+  resize: none;
+  outline: none;
+  border: none;
+  width: 100%;
+  font-size: 1.35vmax;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  font-family: "Lato", sans-serif;
+}
+
+.text-area {
+  background-color: #EAEAEA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-inline: 0.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}/*# sourceMappingURL=styles.css.map */
